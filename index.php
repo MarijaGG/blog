@@ -8,7 +8,7 @@ require "functions.php";
 require "Database.php";
 $config = require "config.php";
 
-echo "<h1>Blogs</h1>";
+
 
 $db = new Database($config["database"]);
 
@@ -31,15 +31,8 @@ $posts = $db->query($sql, $params)->fetchAll();
 // post - ja maina db content
 // get - atlasta datus
 
-echo "<form>";
-echo "<input name='search' />";
-echo "<button>Search</button>";
-echo "</form>";
+require "views/index.view.php";
 
-echo "<ul>";
-  foreach($posts as $x) {
-    echo "<li>" . $x['content'] . "</li>"; }
-echo "</ul>";
 
 
 
