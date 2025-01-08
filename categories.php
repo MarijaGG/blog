@@ -6,8 +6,6 @@
 require "Database.php";
 $config = require "config.php";
 
-echo "<h1>Categories</h1>";
-
 $db = new Database($config["database"]);
 
 $sql = "SELECT * FROM categories";
@@ -29,17 +27,6 @@ $posts = $db->query($sql, $params)->fetchAll();
 // post - ja maina db content
 // get - atlasta datus
 
-echo "<form>";
-echo "<input name='search' />";
-echo "<button>Search</button>";
-echo "</form>";
-
-echo "<ul>";
-  foreach($posts as $x) {
-    echo "<li>" . $x['category_name'] . "</li>"; }
-echo "</ul>";
-
-
-
+require "views/categories.view.php";
 
 

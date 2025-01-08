@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blogs</title>
+    <title>Categories</title>
 </head>
 <body>
 
-<h1>Blogs</h1>
+<h1>Categories</h1>
 
 <form>
     <input name='search' value='<?= $_GET["search"] ?? "" ?>'/>
@@ -16,7 +16,7 @@
 
 <ul>
  <?php foreach($posts as $x) { ?>
-    <li> <?= $x['content'] ?> </li>
+    <li> <?= $x['category_name'] ?> </li>
 <?php } ?>
 </ul>  
 
