@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blogs</title>
-</head>
-<body>
+<?php require "components/header.php"; ?>
+<?php require "components/navbar.php"; ?>
 
 <h1>Blogs</h1>
 
@@ -14,6 +8,13 @@
     <button>Search</button>
 </form>
 
+<?php
+
+if (count($posts) == 0) {
+    echo "0 results found";
+}
+?>
+
 <ul>
  <?php foreach($posts as $x) { ?>
     <li> <?= $x['content'] ?> </li>
@@ -21,6 +22,7 @@
 </ul>  
 
 
-</body>
-</html>
+
+<?php require "components/footer.php"; ?>
+
 

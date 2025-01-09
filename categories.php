@@ -1,4 +1,3 @@
-
 <?php
 
 // sodien 06.01, taisiisim ierakstu mekletaaju
@@ -27,6 +26,7 @@ $posts = $db->query($sql, $params)->fetchAll();
 // post - ja maina db content
 // get - atlasta datus
 
+$pageTitle = "Categories";
 require "views/categories.view.php";
 
 

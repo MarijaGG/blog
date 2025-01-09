@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categories</title>
-</head>
-<body>
+<?php require "components/header.php"; ?>
+<?php require "components/navbar.php"; ?>
 
 <h1>Categories</h1>
 
@@ -20,7 +14,5 @@
 <?php } ?>
 </ul>  
 
-
-</body>
-</html>
+<?php require "components/header.php"; ?>
 

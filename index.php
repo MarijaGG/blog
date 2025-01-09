@@ -1,8 +1,5 @@
-<link rel="stylesheet" href="style.css">
-
 <?php
 
-// sodien 06.01, taisiisim ierakstu mekletaaju
 
 require "functions.php";
 require "Database.php";
@@ -31,6 +28,7 @@ $posts = $db->query($sql, $params)->fetchAll();
 // post - ja maina db content
 // get - atlasta datus
 
+$pageTitle = "Blogi";
 require "views/index.view.php";
 
 
