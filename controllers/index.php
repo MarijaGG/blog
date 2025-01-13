@@ -1,19 +1,12 @@
 <?php
 
-// sodien 06.01, taisiisim ierakstu mekletaaju
-
-require "Database.php";
-$config = require "config.php";
-
-$db = new Database($config["database"]);
-
-$sql = "SELECT * FROM categories";
+$sql = "SELECT * FROM posts";
 $params = [];
 
 if (isset($_GET["search"]) AND $_GET["search"] != ""){
   // search logic
   $search = "%" . $_GET["search"] . "%";
-  $sql .= " WHERE category_name LIKE :search;";
+  $sql .= " WHERE content LIKE :search;";
   $params = ["search" => $search];
 }
 
@@ -26,7 +19,11 @@ $posts = $db->query($sql, $params)->fetchAll();
 // post - ja maina db content
 // get - atlasta datus
 
-$pageTitle = "Categories";
-require "views/categories.view.php";
+$pageTitle = "Blogi";
+require "views/index.view.php";
+
+
+
+
 
 
