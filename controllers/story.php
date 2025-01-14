@@ -1,6 +1,6 @@
 <?php
 
-$title = "Blogz";
+$title = "🐟";
 
 $pageTitle = "Story";
 require "views/story.view.php";

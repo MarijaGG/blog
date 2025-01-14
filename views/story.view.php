@@ -21,7 +21,7 @@ tā ir pilnīga kopiena.</p>
 Lietotāju skaits strauji pieaug, jo cilvēki no visas Latvijas novērtē iespējas, 
 ko piedāvā <?= $title ?>, un platformas radīto ciešo saikni starp rakstniekiem un lasītājiem.</p>
 
-<?php require "components/header.php"; ?>
+<?php require "components/footer.php"; ?>
 
 
 
