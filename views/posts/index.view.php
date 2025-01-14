@@ -1,5 +1,5 @@
-<?php require "components/header.php"; ?>
-<?php require "components/navbar.php"; ?>
+<?php require "views/components/header.php"; ?>
+<?php require "views/components/navbar.php"; ?>
 
 <h1>Blogs</h1>
 
@@ -17,12 +17,12 @@ if (count($posts) == 0) {
 
 <ul>
  <?php foreach($posts as $x) { ?>
-    <li> <?= $x['content'] ?> </li>
+    <li> <a href="show?id=<?=$x['id']?>"> <?= $x['content'] ?> </a></li>
 <?php } ?>
 </ul>  
 
 
 
-<?php require "components/footer.php"; ?>
+<?php require "views/components/footer.php"; ?>
 
 

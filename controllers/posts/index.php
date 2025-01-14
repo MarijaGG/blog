@@ -20,7 +20,7 @@ $posts = $db->query($sql, $params)->fetchAll();
 // get - atlasta datus
 
 $pageTitle = "Blogi";
-require "views/index.view.php";
+require "views/posts/index.view.php";
 
 
 
