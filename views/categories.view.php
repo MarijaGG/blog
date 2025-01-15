@@ -8,7 +8,7 @@
     <button>Search</button>
 </form>
 
-<ul>
+<ul class="posts">
  <?php foreach($posts as $x) { ?>
     <li> <?= $x['category_name'] ?> </li>
 <?php } ?>
