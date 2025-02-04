@@ -9,7 +9,7 @@
 </form>
 
 <?php if(isset($errors["content"])) { ?>
-       <p><?= $errors["content"] ?></p>
+       <p class="error"><?= $errors["content"] ?></p>
      <?php } ?>
 
 <?php require "views/components/footer.php"; ?>

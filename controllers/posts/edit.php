@@ -3,6 +3,11 @@
 require "Validator.php";
 $validator = new Validator();
 
+$sql = "SELECT * FROM posts WHERE id = :id";
+$params = ["id" => $_GET["id"]];
+$x = $db->query($sql, $params)->fetch();
+
+
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -13,8 +18,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }   
 
     if (empty($errors)) {
-        $sql = "INSERT INTO posts (content) VALUES (:content)";
-        $params = ["content" => $_POST["content"]];
+        $sql = "
+        UPDATE posts
+        SET content = :content
+        WHERE id = :id;";
+
+        $params = [
+            "content" => $_POST["content"], 
+            "id" => $_GET["id"],        
+    ];
 
         $db->query($sql, $params);
     
@@ -25,5 +37,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
 
-$pageTitle = "Create blog";
-require "views/posts/create.view.php";
+$pageTitle = "Edit blog";
+require "views/posts/edit.view.php";

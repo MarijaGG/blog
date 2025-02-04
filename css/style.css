@@ -55,3 +55,8 @@ ul.posts li {
    text-align: center;
    padding: 5px 5px;
 }
+
+.error {
+   color: red;
+   font-weight: bolder;
+}
