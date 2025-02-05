@@ -3,9 +3,18 @@
 require "Validator.php";
 $validator = new Validator();
 
+
+if(!isset($_GET["id"]) || $_GET["id"] == ""){
+    redirectIfNotFound();
+}
+
 $sql = "SELECT * FROM posts WHERE id = :id";
 $params = ["id" => $_GET["id"]];
 $x = $db->query($sql, $params)->fetch();
+
+if(!$x) {
+    redirectIfNotFound();
+}
 
 
 
@@ -30,12 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $db->query($sql, $params);
     
-        header("Location: /"); 
+        header("Location: /show?id=" . (int)$_GET['id']);
         exit();
     }
 }
 
-
-
-$pageTitle = "Edit blog";
-require "views/posts/edit.view.php";
