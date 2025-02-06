@@ -4,12 +4,14 @@ USE blog;
 
 CREATE TABLE posts( 
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+    category_id INT, 
     content VARCHAR(1000));
 
-INSERT INTO posts(content) 
+INSERT INTO posts(content, category_id) 
 VALUES 
 ("pirmais ieraksts"), 
-("otrais ieraksts");
+("otrais ieraksts"),
+("CHRISTMAS", "1");
 
 SELECT * FROM `posts`;
 

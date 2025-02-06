@@ -26,15 +26,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $errors["content"] = "Saturam jābūt ievadītam, bet ne garākam par 50 rakstzīmēm";
     }   
 
+    if (empty($_POST["category_id"])) {
+        $errors["category_id"] = "Lūdzu, izvēlieties kategoriju.";
+    }
+
     if (empty($errors)) {
         $sql = "
         UPDATE posts
-        SET content = :content
+        SET content = :content,
+            category_id = :category_id
         WHERE id = :id;";
 
         $params = [
             "content" => $_POST["content"], 
-            "id" => $_GET["id"],        
+            "category_id" => $_POST["category_id"], 
+            "id" => $_GET["id"]       
     ];
 
         $db->query($sql, $params);
@@ -44,3 +50,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 
+$sql = "SELECT * FROM categories";
+$params = [];
+$categories = $db->query($sql, $params)->fetchAll();
+
+require "views/posts/edit.view.php";
