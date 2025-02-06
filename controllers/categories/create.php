@@ -8,8 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $errors = [];
 
-    if(!Validator::string($_POST["category_name"], max: 25)){
-        $errors["category_name"] = "Saturam jābūt ievadītam, bet ne garākam par 25 rakstzīmēm";
+    if(!Validator::string($_POST["category_name"], max: 25, min: 2)){
+        $errors["category_name"] = "Saturam jābūt vismaz 2 rakstzīmēm, bet ne garākam par 25 rakstzīmēm";
     }   
 
     if (empty($errors)) {

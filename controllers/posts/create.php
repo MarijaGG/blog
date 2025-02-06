@@ -10,13 +10,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $errors["content"] = "Saturam jābūt ievadītam, bet ne garākam par 50 rakstzīmēm";
     }
 
+
+    $category_id = empty($_POST["category_id"]) ? NULL : $_POST["category_id"];
+
     if (empty($errors)) {
+        // Insert post with possible NULL category_id
         $sql = "INSERT INTO posts (content, category_id) VALUES (:content, :category_id)";
         $params = [
             "content" => $_POST["content"],
-            "category_id" => $_POST["category_id"] ];
+            "category_id" => $category_id
+        ];
         $db->query($sql, $params);
 
+        // Redirect to homepage after successful insertion
         header("Location: /");
         exit();
     }

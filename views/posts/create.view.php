@@ -7,6 +7,7 @@
   <label ><input name="content" value="<?= $_POST['content'] ?? ""?>"/></label>
   
   <select name="category_id">
+  <option value="" <?= (empty($x['category_id']) && empty($_POST['category_id'])) ? 'selected' : '' ?>>Bez kategorijas</option>
     <?php foreach ($categories as $category){ ?>
         <option value="<?=$category['id']?>">
             <?= htmlspecialchars($category['category_name']) ?>
