@@ -8,8 +8,8 @@
 <input name="id" type="hidden" value="<?= $_GET['id'] ?? "" ?>">
 <input name="content" value="<?= $_POST["content"] ?? $x["content"] ?>">
 
-<select name="category_id">
-    <option value="" <?= (empty($x['category_id']) && empty($_POST['category_id'])) ? 'selected' : '' ?>>Bez kategorijas</option>
+<select <option value="" <?= (empty($x['category_id']) && empty($_POST['category_id'])) ? 'selected' : '' ?>>Bez kategorijas</option>name="category_id">
+    
     <?php foreach ($categories as $category) { ?>
         <option value="<?= $category['id'] ?>" <?= ($category['id'] == ($x['category_id'] ?? $_POST['category_id'] ?? '')) ? 'selected' : '' ?>>
             <?= $category['category_name'] ?>

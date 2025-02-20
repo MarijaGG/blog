@@ -2,7 +2,7 @@
 <?php require "views/components/navbar.php"; ?>
 
 <h1> <?= htmlspecialchars($x["content"]) ?> </h1>
-<h3> <?= $x["category_name"] ?> </h3>
+<h3> <?= $x["category_name"]?> </h3>
 
 <a href="edit?id=<?=$x["id"]?>">Edit</a> <br>
 
